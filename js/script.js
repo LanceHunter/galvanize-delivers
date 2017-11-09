@@ -76,9 +76,10 @@ orderIceCream.click(function () {
 
 
 orderButton.click(function() {
-  if (orderButton.hasClass('disabled')) { console.log(`Not yet.`);
+  if (orderButton.hasClass('disabled')) {
+    Materialize.toast('Order is empty.', 4000);
   } else {
-    console.log(`Order up!`);
+    Materialize.toast('Thanks for trying this out. One day this may be an actual business.', 6000);
   }
 });
 
