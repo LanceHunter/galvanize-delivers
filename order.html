@@ -14,14 +14,16 @@
   <body>
 
     <!--Navbar for the page. -->
-    <nav class="purple lighten-1">
+    <header>
+      <nav class="purple lighten-1">
         <div class="nav-wrapper">
           <a href="index.html" class="brand-logo">Galvanize Delivers</a>
           <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li class="active"><a href="order.html">Order Delivery</a></li>
           </ul>
         </div>
-    </nav>
+      </nav>
+    </header>
 
     <!-- Main content of page. -->
     <div class="container row">
@@ -40,7 +42,7 @@
               <p>$8.99</p>
             </div>
             <div class="card-action">
-              <a href="#" id="orderBurger">ADD TO ORDER</a>
+              <a href="#" class="purple-text text-lighten-1" id="orderBurger">ADD TO ORDER</a>
             </div>
           </div>
         </div>
@@ -56,7 +58,7 @@
               <p>$11.99</p>
             </div>
             <div class="card-action">
-              <a href="#" id="orderPizza">ADD TO ORDER</a>
+              <a href="#" class="purple-text text-lighten-1" id="orderPizza">ADD TO ORDER</a>
             </div>
           </div>
         </div>
@@ -72,7 +74,7 @@
             <p>$14.99</p>
           </div>
           <div class="card-action">
-            <a href="#" id="orderRibs">ADD TO ORDER</a>
+            <a href="#" class="purple-text text-lighten-1" id="orderRibs">ADD TO ORDER</a>
           </div>
         </div>
       </div>
@@ -85,10 +87,10 @@
           </div>
           <div class="card-content">
             <span class="card-title">Ice Cream</span>
-            <p>$14.99</p>
+            <p>$7.99</p>
           </div>
           <div class="card-action">
-            <a href="#" id="orderIceCream">ADD TO ORDER</a>
+            <a href="#" class="purple-text text-lighten-1" id="orderIceCream">ADD TO ORDER</a>
           </div>
         </div>
       </div>
@@ -99,8 +101,53 @@
       <!-- Column showing customer's order. -->
       <div class="col s6">
         <h2>Order</h2>
-        <div id="orderData">orderData</div>
-        <div id="customerData">customerData</div>
+
+        <!-- This is where customer see what items are on their order and the current order price. -->
+        <div id="orderData" class="hide">
+          <div id="orderDataHeader" class="row">
+            <h5 class="left">Item</h5><h5 class="right">Price</h5>
+          </div>
+          <!-- This empty unordered list is where items will be put when they are added to order. -->
+          <div id="orderDataBody" class="row">
+            <ul id="orderedItems" class="collection"></ul>
+          </div>
+          <!-- This is where we show the cost. -->
+          <div id="moneyFields" class="col s6 offset-s6">
+            <div id="subTotal-container" class="row">
+              <div class="col s2 offset-s2">Subtotal</div>
+              <div id="subTotalHere" class="col s2 offset-s5 align-right"></div>
+            </div>
+            <div id="salesTax-container" class="row">
+              <div class="col s2 offset-s2">Sales Tax</div>
+              <div id="salesTaxHere" class="col s2 offset-s5 align-right"></div>
+            </div>
+            <div id="orderTotal-container" class="row">
+              <div class="col s2 offset-s2">Order Total</div>
+              <div id="orderTotalHere" class="col s2 offset-s5 align-right"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- This is where customer will input their information for the order. This is hidden until at least one item is added to order. -->
+        <div id="customerData" class="hide">
+          <div class="row">
+            <div class="input-field col s12">
+              <input id="customerName" type="text" class="validate">
+              <label class="active" for="customerName">Name</label>
+            </div>
+            <div class="input-field col s12">
+              <input id="customerPhone" type="tel" class="validate">
+              <label for="customerPhone">Phone number</label>
+            </div>
+            <div class="input-field col s12">
+              <textarea id="customerAddress" class="materialize-textarea"></textarea>
+              <label for="customerAddress">Address</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- This is button to submit the order. It is disabled until customer adds items to order. -->
         <div class="center"><a class="waves-effect waves-light btn-large disabled" id='orderButton'>Submit Order</a></div>
       </div>
     </div>
