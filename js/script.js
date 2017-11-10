@@ -74,12 +74,13 @@ orderIceCream.click(function () {
   updateTotal(7.99);
 });
 
+//This will handle any clicks on the order button. It will return an error if there are no items ordered and will return a "thanks for playing" if there are.
 
 orderButton.click(function() {
   if (orderButton.hasClass('disabled')) {
     Materialize.toast('Order is empty.', 4000);
   } else {
-    Materialize.toast('Thanks for trying this out. One day this may be an actual business.', 6000);
+    Materialize.toast('Thanks for trying this out.', 6000);
   }
 });
 
